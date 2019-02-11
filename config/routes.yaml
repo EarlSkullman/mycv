@@ -24,8 +24,8 @@ create_skill:
     path: /create/skill
     controller: App\Controller\LuckyController::createskill
     
-formulaire_loisir:
-    path: /loisir/formulaire
+create_loisir:
+    path: /loisir/create
     controller: App\Controller\LoisirController::create
     
 valid_loisir:
@@ -36,3 +36,29 @@ valid_loisir:
 edit_loisir:
     path: /loisir/edit/{id}
     controller: App\Controller\LoisirController::edit
+    
+create_experience:
+    path: /experience/create
+    controller: App\Controller\ExperienceController::create
+    
+valid_experience:
+    path: /experience/valid
+    controller: App\Controller\ExperienceController::valid
+
+    
+edit_experience:
+    path: /experience/edit/{id}
+    controller: App\Controller\ExperienceController::edit
+    
+create_formation:
+    path: /formation/create
+    controller: App\Controller\FormationController::create
+    
+valid_formation:
+    path: /formation/valid
+    controller: App\Controller\FormationController::valid
+
+    
+edit_formation:
+    path: /formation/edit/{id}
+    controller: App\Controller\FormationController::edit
