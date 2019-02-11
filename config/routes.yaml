@@ -23,3 +23,16 @@ create_experience:
 create_skill:
     path: /create/skill
     controller: App\Controller\LuckyController::createskill
+    
+formulaire_loisir:
+    path: /loisir/formulaire
+    controller: App\Controller\LoisirController::create
+    
+valid_loisir:
+    path: /loisir/valid
+    controller: App\Controller\LoisirController::valid
+
+    
+edit_loisir:
+    path: /loisir/edit/{id}
+    controller: App\Controller\LoisirController::edit

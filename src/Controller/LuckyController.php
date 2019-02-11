@@ -3,13 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use App\Entity\Formation;
-
 use App\Entity\Experience;
-
 use App\Entity\Skill;
 
 class LuckyController extends Controller
