@@ -8,6 +8,7 @@ security:
             security: false
         main:
             anonymous: true
+            http_basic: true
 
             # activate different ways to authenticate
 
