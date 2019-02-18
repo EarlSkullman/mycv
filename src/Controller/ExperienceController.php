@@ -58,4 +58,14 @@ class ExperienceController extends AbstractController
             ]
         );
     }
+    
+    public function delete(Request $request, Experience $experience): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$experience->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($experience);
+            $entityManager->flush();
+        }
+        return $this->redirectToRoute('app_lucky_number');
+    }
 }

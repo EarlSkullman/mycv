@@ -19,7 +19,7 @@
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
-			<img src="/my_cv/src/arthas.png" alt="Léo LEPLOMB" />
+			<img src="/my_cv/src/pp.png" alt="Léo LEPLOMB" />
 		</div>
 		
 		<div id="name">
@@ -55,11 +55,13 @@
 		<section>
 			<div class="sectionTitle">
 				<h1>Work Experience</h1>
+				<a href="{{ path('create_experience')}}" target="_blank">Créer</a>
 			</div>
 			
 			<div class="sectionContent">
 				<article>
 					{% for experience in experiences %}
+				
     						<li class="padding-top-10-margin-10">
     							<span class="bold">
 									{{experience.getTitle()|upper}} </br>
@@ -68,7 +70,9 @@
 									{{experience.getDateDebut()|date('d-m-y')}}
 									{{experience.getDateFin()|date('d-m-y')}} </br>
 								</span>
-									{{experience.getComment()}}
+									{{experience.getComment()}} </br>
+									<a href="{{ path('edit_experience', {'id':experience.getId})}}" target="_blank">Éditer</a>
+									<a href="{{ path('delete_experience', {'id':experience.getId})}}" target="_blank">Supprimer</a>
 							</li>
 					{% endfor %}
 				</article>
