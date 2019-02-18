@@ -33,16 +33,4 @@ edit_loisir:
     path: /loisir/edit/{id}
     controller: App\Controller\LoisirController::edit
 
-create_formation:
-    path: /formation/create
-    controller: App\Controller\FormationController::create
-    
-valid_formation:
-    path: /formation/valid
-    controller: App\Controller\FormationController::valid
-
-    
-edit_formation:
-    path: /formation/edit/{id}
-    controller: App\Controller\FormationController::edit
     
