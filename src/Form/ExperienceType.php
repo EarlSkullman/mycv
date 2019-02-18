@@ -6,7 +6,6 @@ use App\Entity\Experience;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ExperienceType extends AbstractType
 {
@@ -17,9 +16,6 @@ class ExperienceType extends AbstractType
             ->add('Date_fin')
             ->add('title')
             ->add('comment')
-            ->add('save', SubmitType::class, [
-                'attr' => ['class' => 'save'],
-            ])
         ;
     }
 

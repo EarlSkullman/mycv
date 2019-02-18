@@ -9,16 +9,12 @@
 
 # the "app_lucky_number" route name is not important yet
 app_lucky_number:
-    path: /lucky/number/
+    path: /
     controller: App\Controller\LuckyController::number
     
 create_formation:
     path: /create/formation
     controller: App\Controller\LuckyController::createformation
-    
-create_experience:
-    path: /create/experience
-    controller: App\Controller\LuckyController::createexpericence
     
 create_skill:
     path: /create/skill
@@ -36,24 +32,7 @@ valid_loisir:
 edit_loisir:
     path: /loisir/edit/{id}
     controller: App\Controller\LoisirController::edit
-    
-create_experience:
-    path: /experience/create
-    controller: App\Controller\ExperienceController::create
-    
-valid_experience:
-    path: /experience/valid
-    controller: App\Controller\ExperienceController::valid
 
-    
-edit_experience:
-    path: /experience/edit/{id}
-    controller: App\Controller\ExperienceController::edit
-    
-delete_experience:
-    path: /experience/delete/{id}
-    controller: App\Controller\ExperienceController::delete
-    
 create_formation:
     path: /formation/create
     controller: App\Controller\FormationController::create

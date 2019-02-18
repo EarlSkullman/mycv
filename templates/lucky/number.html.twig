@@ -55,7 +55,7 @@
 		<section>
 			<div class="sectionTitle">
 				<h1>Work Experience</h1>
-				<a href="{{ path('create_experience')}}" target="_blank">Créer</a>
+				<a href="{{ path('experience_new')}}" target="_blank">Créer</a>
 			</div>
 			
 			<div class="sectionContent">
@@ -71,8 +71,8 @@
 									{{experience.getDateFin()|date('d-m-y')}} </br>
 								</span>
 									{{experience.getComment()}} </br>
-									<a href="{{ path('edit_experience', {'id':experience.getId})}}" target="_blank">Éditer</a>
-									<a href="{{ path('delete_experience', {'id':experience.getId})}}" target="_blank">Supprimer</a>
+									<a href="{{ path('experience_edit', {'id': experience.getId() })}}" target="_blank">Éditer</a>
+									{{ include('experience/_delete_form.html.twig') }}
 							</li>
 					{% endfor %}
 				</article>
