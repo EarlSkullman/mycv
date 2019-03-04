@@ -33,4 +33,6 @@ edit_loisir:
     path: /loisir/edit/{id}
     controller: App\Controller\LoisirController::edit
 
-    
+admin:
+    path: /admin
+    controller: App\Controller\LuckyController::admin

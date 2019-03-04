@@ -55,7 +55,7 @@
 		<section>
 			<div class="sectionTitle">
 				<h1>Work Experience</h1>
-				<a href="{{ path('experience_new')}}" target="_blank">Créer</a>
+				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('experience_new')}}" target="_blank">Créer</a>{% endif %}
 			</div>
 			
 			<div class="sectionContent">
@@ -71,8 +71,8 @@
 									{{experience.getDateFin()|date('d-m-y')}} </br>
 								</span>
 									{{experience.getComment()}} </br>
-									<a href="{{ path('experience_edit', {'id': experience.getId() })}}" target="_blank">Éditer</a>
-									<a href="{{ path('experience_delete', {'id': experience.getId() })}}" target="_blank">Supprimer</a></br>
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('experience_edit', {'id': experience.getId() })}}" target="_blank">Éditer</a>{% endif %}
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('experience_delete', {'id': experience.getId() })}}" target="_blank">Supprimer</a>{% endif %}</br>
 							</li>
 					{% endfor %}
 				</article>
@@ -102,7 +102,7 @@
 		<section>
 			<div class="sectionTitle">
 				<h1>Key Skills</h1>
-				<a href="{{ path('skill_new')}}" target="_blank">Créer</a>
+				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('skill_new')}}" target="_blank">Créer</a>{% endif %}
 			</div>
 			
 			<div class="sectionContent">
@@ -111,8 +111,8 @@
 					{% for skill in skills %}
     						<li class="padding-top-10-margin-10">
 									{{skill.getTitle()|upper}} </br>
-									<a href="{{ path('skill_edit', {'id': skill.getId() })}}" target="_blank">Éditer</a>
-									<a href="{{ path('skill_delete', {'id': skill.getId() })}}" target="_blank">Supprimer</a></br></br>
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('skill_edit', {'id': skill.getId() })}}" target="_blank">Éditer</a>{% endif %}
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('skill_delete', {'id': skill.getId() })}}" target="_blank">Supprimer</a></br></br>{% endif %}
 									
 							</li>
 							
@@ -135,7 +135,7 @@
 		<section>
 			<div class="sectionTitle">
 				<h1>Parcours scolaire</h1>
-				<a href="{{ path('formation_new')}}" target="_blank">Créer</a>
+				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('formation_new')}}" target="_blank">Créer</a>{% endif %}
 			</div>
 			
 			<div class="sectionContent">
@@ -151,8 +151,8 @@
 									{{formation.getDateFin()|date('d-m-y')}} </br>
 								</span>
 									{{formation.getComment()}}
-									<a href="{{ path('formation_edit', {'id': formation.getId() })}}" target="_blank">Éditer</a>
-									<a href="{{ path('formation_delete', {'id': formation.getId() })}}" target="_blank">Supprimer</a></br>
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('formation_edit', {'id': formation.getId() })}}" target="_blank">Éditer</a>{% endif %}
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('formation_delete', {'id': formation.getId() })}}" target="_blank">Supprimer</a>{% endif %}</br>
 							</li>
 					{% endfor %}
 				</article>

@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use App\Entity\Formation;
 use App\Entity\Experience;
 use App\Entity\Skill;
@@ -79,4 +81,15 @@ class LuckyController extends Controller
         
     }
     
+    public function admin ()
+    {
+        return new Response ( '<html><body>Admin page!</body></html>' );
+    }
+    
+    public function hello($name, AuthorizationCheckerInterface $authChecker)
+    {
+        if (false === $authChecker->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedException('Unable to access this page!');
+        }
+    }
 }
