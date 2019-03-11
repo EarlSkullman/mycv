@@ -16,7 +16,9 @@ class LoisirController extends AbstractController
         $loisir = new Loisir();
         $form = $this->createForm(LoisirType:: class, $loisir);
         
-        return $this->render('loisir/create.html.twig', [
+        return $this->render(
+            'loisir/create.html.twig',
+            [
             'entity' =>$loisir,
             'form' =>$form->createView(),
             ]
@@ -39,7 +41,9 @@ class LoisirController extends AbstractController
             
             return $this->redirectToRoute('app_lucky_number');
         }
-        return $this->render('loisir/create.html.twig', [
+        return $this->render(
+            'loisir/create.html.twig',
+            [
             'entity' => $loisir,
             'form' => $form->createView(),
             ]
@@ -52,7 +56,9 @@ class LoisirController extends AbstractController
         $loisir = $entityManager->getRepository(Loisir::class)->findOneBy(['id' => $id]);
         $form = $this->createForm(LoisirType::class, $loisir);
         
-        return $this->render('loisir/create.html.twig', [
+        return $this->render(
+            'loisir/create.html.twig',
+            [
             'entity => $loisir',
             'form' => $form->createView(),
             ]

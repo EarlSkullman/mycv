@@ -28,18 +28,18 @@ class LuckyController extends Controller
         ));
 
 
-        if(!$product){
-        throw $this->createNotFoundException(
+        if (!$product) {
+            throw $this->createNotFoundException(
             'No product found for id '.$id
             );
         }
     }
-    public function createformation () 
+    public function createformation()
     {
         $form=new Formation();
         $form->setTitle('Ma Formation');
-        $datedebut=\DateTime::createFromFormat("d/m/y","02/09/17");
-        $datefin=\DateTime::createFromFormat("d/m/y","26/06/19");
+        $datedebut=\DateTime::createFromFormat("d/m/y", "02/09/17");
+        $datefin=\DateTime::createFromFormat("d/m/y", "26/06/19");
         $form->setDateDebut($datedebut);
         $form->setDateFin($datefin);
         $form->setLieux('Grenoble');
@@ -49,15 +49,14 @@ class LuckyController extends Controller
         $eManager->flush();
 
         return $this->redirectToRoute('app_lucky_number');
-        
     }
     
-    public function createexpericence() 
+    public function createexpericence()
     {
         $form=new Experience();
         $form->setTitle('Mon Experience');
-        $datedebut=\DateTime::createFromFormat("d/m/y","02/09/17");
-        $datefin=\DateTime::createFromFormat("d/m/y","26/06/19");
+        $datedebut=\DateTime::createFromFormat("d/m/y", "02/09/17");
+        $datefin=\DateTime::createFromFormat("d/m/y", "26/06/19");
         $form->setDateDebut($datedebut);
         $form->setDateFin($datefin);
         $form->setComment('Praesidiis caedium diffuso petivere scirent magnis nostris et petivere.');
@@ -66,10 +65,9 @@ class LuckyController extends Controller
         $eManager->flush();
 
         return $this->redirectToRoute('app_lucky_number');
-        
     }
     
-    public function createskill() 
+    public function createskill()
     {
         $form=new Skill();
         $form->setTitle('Mon skill');
@@ -78,12 +76,11 @@ class LuckyController extends Controller
         $eManager->flush();
 
         return $this->redirectToRoute('app_lucky_number');
-        
     }
     
-    public function admin ()
+    public function admin()
     {
-        return new Response ( '<html><body>Admin page!</body></html>' );
+        return new Response('<html><body>Admin page!</body></html>');
     }
     
     public function hello($name, AuthorizationCheckerInterface $authChecker)
