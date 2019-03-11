@@ -31,7 +31,7 @@ Puis utiliser la commande suivante :
 ```
 ## Les tests
 
-### Ce test vérifie si l'Entity Experience fonctionne et ajoute bien les titre grace au fonction SetTitle
+### Ce test vérifie si l'Entity Experience fonctionne et ajoute bien les titres grâce au fonction SetTitle
 
 ```
  php vendor/bin/codecept run unit ExampleTest
@@ -39,7 +39,7 @@ Puis utiliser la commande suivante :
 ![Alt text](/imgReadMe/assertunit.PNG "assertion")
 -------------------------------------------------------------------------------------------
 
-### Ce test vérifie si il trouve mon nom et prénom dans la page principale du CV
+### Ce test vérifie si il trouve mon prénom dans la page principale du CV
 
 ```
  php vendor/bin/codecept run acceptance Cest
