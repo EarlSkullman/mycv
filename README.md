@@ -1,4 +1,4 @@
-# S4C2 LEPLOMB_Léo Mon CV
+# S4C2 LEPLOMBLéo - Mon CV
 
 Ce Cv est voulu  pour être modifiable, d'être réutilisable par d'autres utilisateurs mais également d'être mis à jour de manière simplifié.
 
@@ -16,11 +16,10 @@ Ce Cv est voulu  pour être modifiable, d'être réutilisable par d'autres utili
 * Le formulaire de contact enregistre les données sur la base de donnée.
 * Le projet est selon Checkstyle conforme.
 * Il et possible de ce connecter selon la méthode In_memory.
-* Le site est responsive.
 
 ### Prérequis
 
-Afin de se connecter au CV le lien est le [suivant](https://symphony-allardnathanael.c9users.io/my_cv/public/index.php/)
+Pour se connecter à mon Curriculum Vitae le lien est le [suivant](https://test-php-earlskullman.c9users.io/my_cv/public/index.php/)
 
 ## Installation
 
@@ -47,32 +46,27 @@ Puis les commandes sont accessible via la commande
 ### Ce test vérifie si il trouve mon nom et prénom Dans la page principale du CV
 
 ```
- php vendor/bin/codecept run acceptance SigninCest
+ php vendor/bin/codecept run acceptance Cest
 ```
 ![Alt text](/readimg/accept.PNG "acceptance")
 
-## Admin
+## Partie Administrative
 
 Appuyer sur le bouton se connecter
 * Identifiant :  admin
-* Mot de passe : moi
+* Mot de passe : admin
 
 ![Alt text](/readimg/admin.PNG "Connection")
 
 ## Auteur
 
 * **Coquil** - *Initiateur* -
-* **Allard Nathanael**
+* **EarlSkullman**
 
 ## Idée d'amélioration
 
 ### Premièrement des amélioration graphique
-* Un fond derriere le Header
-* Les langues en lignes
-* Une section compétences plus complètes avec des graphiques
+* 
 
 ### Amélioration technique
-
-* Mot de passe et login en base de donnée
-* Les images directement modifable ( si possible ) sans passé par le projet symphony
-* Le bouton Voir le projet ne marche pas
+* 
