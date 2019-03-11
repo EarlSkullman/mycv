@@ -24,6 +24,10 @@ create_loisir:
     path: /loisir/create
     controller: App\Controller\LoisirController::create
     
+create_contact:
+    path: /contact/create
+    controller: App\Controller\LuckyController::create
+    
 valid_loisir:
     path: /loisir/valid
     controller: App\Controller\LoisirController::valid

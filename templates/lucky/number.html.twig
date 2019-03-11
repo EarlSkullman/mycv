@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width"/>
 <meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
 <meta charset="UTF-8"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <link type="text/css" rel="stylesheet" href="{{ asset('style.css')}}">
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
@@ -16,6 +17,18 @@
 <![endif]-->
 </head>
 <body id="top">
+	<div>
+		<nav id="primary_nav_wrap">
+			<ul>
+			  <li class="current-menu-item"><a href="Accueil">Accueil</a></li>
+			  <li><a href="#Expériences">Expériences</a>
+			  <li><a href="#Compétences">Compétences</a></li>
+			  <li><a href="#Formations">Formations</a>
+			  <li><a href="#Loisirs">Loisirs</a></li>
+			  <li><a href="#Contacter">Me contacter</a></li>
+			</ul>
+		</nav>
+	</div>
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
@@ -38,7 +51,7 @@
 	</div>
 	
 	<div id="mainArea" class="quickFade delayFive">
-		<section>
+		<section id="Accueil">
 			<article>
 				<div class="sectionTitle">
 					<h1>Personal Profile</h1>
@@ -52,9 +65,9 @@
 		</section>
 		
 		
-		<section>
+		<section id="Expériences">
 			<div class="sectionTitle">
-				<h1>Work Experience</h1>
+				<h1>Expériences professionnelles</h1>
 				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('experience_new')}}" target="_blank">Créer</a>{% endif %}
 			</div>
 			
@@ -100,8 +113,8 @@
 		
 		
 		<section>
-			<div class="sectionTitle">
-				<h1>Key Skills</h1>
+			<div class="sectionTitle" id="Compétences">
+				<h1>Mes compétences</h1>
 				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('skill_new')}}" target="_blank">Créer</a>{% endif %}
 			</div>
 			
@@ -132,7 +145,7 @@
 		</section>
 		
 		
-		<section>
+		<section id="Formations">
 			<div class="sectionTitle">
 				<h1>Parcours scolaire</h1>
 				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('formation_new')}}" target="_blank">Créer</a>{% endif %}
@@ -155,6 +168,76 @@
 									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('formation_delete', {'id': formation.getId() })}}" target="_blank">Supprimer</a>{% endif %}</br>
 							</li>
 					{% endfor %}
+				</article>
+				{#<article>#}
+				{#	<h2>College/University</h2>#}
+				{#	<p class="subDetails">Qualification</p>#}
+				{#	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>#}
+				{#</article>#}
+				
+				{#<article>#}
+				{#	<h2>College/University</h2>#}
+				{#	<p class="subDetails">Qualification</p>#}
+				{#	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>#}
+				{#</article>#}
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		<section id="Loisirs">
+			<div class="sectionTitle">
+				<h1>Mes loisirs</h1>
+				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('loisir_new')}}" target="_blank">Créer</a>{% endif %}
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					{% for loisir in loisirs %}
+    						<li class="padding-top-10-margin-10">
+    							<span class="bold">
+									{{loisir.getTitle()|upper}} </br>
+								</span>
+								<span class="italic">
+									{{loisir.getType()|title}} <br>
+								</span>
+									{{loisir.getComment()}}
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('loisir_edit', {'id': loisir.getId() })}}" target="_blank">Éditer</a>{% endif %}
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('loisir_delete', {'id': loisir.getId() })}}" target="_blank">Supprimer</a>{% endif %}</br>
+							</li>
+					{% endfor %}
+				</article>
+				{#<article>#}
+				{#	<h2>College/University</h2>#}
+				{#	<p class="subDetails">Qualification</p>#}
+				{#	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>#}
+				{#</article>#}
+				
+				{#<article>#}
+				{#	<h2>College/University</h2>#}
+				{#	<p class="subDetails">Qualification</p>#}
+				{#	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>#}
+				{#</article>#}
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		<section  id="Contacter">
+			<div class="sectionTitle">
+				<h1>Me contacter</h1>
+			</div>
+			<div class="sectionContent">
+				<article>
+					<div class="row">
+						{{ form_start(form) }}
+							<div class="col-3">
+								{{ form_widget(form) }}
+							</div>
+							<div class="col-3">
+								<br>
+								<button class="btn">{{ button_label|default('Envoyez') }}</button>
+							</div>	
+						{{ form_end(form) }}
+					</div>
 				</article>
 				{#<article>#}
 				{#	<h2>College/University</h2>#}
