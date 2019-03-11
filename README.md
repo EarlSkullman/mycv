@@ -5,10 +5,10 @@ Ce CV est voulu pour être modifiable, d'être réutilisable par d'autres utilis
 
 ## Fonctionalités majeures:
 
-* Tout le contenu texte est modifiable: une fois connecté en tant qu'administrateur vous avez accès au système de modification suivant : CRUD. Il permet de créer /modifier / supression.![Alt text](/imgReadMe/crud.PNG "Modifications")
+* Tout le contenu texte est modifiable: une fois connecté en tant qu'administrateur vous avez accès au système de modification suivant : CRUD. Il permet de créer /modifier / supprimer.![Alt text](/imgReadMe/crud.PNG "Modifications")
 * Le menu renvoie a des encre sur le site et le scroll ce fait a travers une fonction javascript afin d'etre plus fluide.
 * Il y a deux tests , un test unitaire qui vérifie si la class et l'Entity Experience fonctionne, et un texte fonctionnel si la base renvoie bien le nom de l'Entity personne.
-* L'annotion @ApiResource est présente sour chaque entité. ![Alt text](/readimg/api.PNG "Modification")
+* L'annotion @ApiResource est présente sour chaque entité. ![Alt text](/imgReadMe/api.PNG "Modification")
 * Le formulaire de contact enregistre les données sur la base de donnée.
 * Le projet est selon Checkstyle conforme.
 On se connecte via la méthode In_memory.
@@ -39,7 +39,7 @@ Puis utiliser la commande suivante :
 ![Alt text](/imgReadMe/assertunit.PNG "assertion")
 -------------------------------------------------------------------------------------------
 
-### Ce test vérifie si il trouve mon nom et prénom Dans la page principale du CV
+### Ce test vérifie si il trouve mon nom et prénom dans la page principale du CV
 
 ```
  php vendor/bin/codecept run acceptance Cest
