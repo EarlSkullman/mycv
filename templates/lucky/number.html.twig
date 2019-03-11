@@ -20,7 +20,7 @@
 	<div>
 		<nav id="primary_nav_wrap">
 			<ul>
-			  <li class="current-menu-item"><a href="Accueil">Accueil</a></li>
+			  <li class="current-menu-item"><a href="{{path('admin')}}">Se connecter</a></li>
 			  <li><a href="#Expériences">Expériences</a>
 			  <li><a href="#Compétences">Compétences</a></li>
 			  <li><a href="#Formations">Formations</a>
@@ -54,11 +54,11 @@
 		<section id="Accueil">
 			<article>
 				<div class="sectionTitle">
-					<h1>Personal Profile</h1>
+					<h1>Qui suis-je ?</h1>
 				</div>
 				
 				<div class="sectionContent">
-					<p>Lorem ipsum dolor sit amet, consectetur {{'adipiscing elit'|capitalize}}. Integer {{ 'dolor  metus'|title }}, interdum at scelerisque in, porta at lacus. Maecenas {{'dapibus'|upper}} luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<p>Je suis actuellement en deuxième année d'un {{'dut mmi'|upper}}({{ "métiers du multimédia et de l'internet"|title }}. Mes camarades et moi nous nous sommes spécialisés dans le domaine de l'{{'audiovisuel'|upper}}.</p>
 				</div>
 			</article>
 			<div class="clear"></div>
@@ -187,7 +187,7 @@
 		<section id="Loisirs">
 			<div class="sectionTitle">
 				<h1>Mes loisirs</h1>
-				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('loisir_new')}}" target="_blank">Créer</a>{% endif %}
+				{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('create_loisir')}}" target="_blank">Créer</a>{% endif %}
 			</div>
 			
 			<div class="sectionContent">
@@ -201,8 +201,8 @@
 									{{loisir.getType()|title}} <br>
 								</span>
 									{{loisir.getComment()}}
-									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('loisir_edit', {'id': loisir.getId() })}}" target="_blank">Éditer</a>{% endif %}
-									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('loisir_delete', {'id': loisir.getId() })}}" target="_blank">Supprimer</a>{% endif %}</br>
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('edit_loisir', {'id': loisir.getId() })}}" target="_blank">Éditer</a>{% endif %}
+									{% if is_granted('ROLE_ADMIN') %}<a href="{{ path('delete_loisir', {'id': loisir.getId() })}}" target="_blank">Supprimer</a>{% endif %}</br>
 							</li>
 					{% endfor %}
 				</article>

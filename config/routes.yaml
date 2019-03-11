@@ -27,15 +27,22 @@ create_loisir:
 create_contact:
     path: /contact/create
     controller: App\Controller\LuckyController::create
-    
-valid_loisir:
-    path: /loisir/valid
-    controller: App\Controller\LoisirController::valid
 
-    
+create_loisir:
+    path: /loisir/create
+    controller: App\Controller\LoisirController::create
+
 edit_loisir:
     path: /loisir/edit/{id}
     controller: App\Controller\LoisirController::edit
+    
+valide_loisir:
+    path: /loisir/valid
+    controller: App\Controller\LoisirController::valid
+    
+delete_loisir:
+    path: /loisir/delete
+    controller: App\Controller\LoisirController::delete
 
 admin:
     path: /admin
